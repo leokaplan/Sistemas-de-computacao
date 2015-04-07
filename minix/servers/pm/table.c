@@ -58,8 +58,11 @@ int (* const call_vec[NR_PM_CALLS])(void) = {
 	CALL(PM_GETEPINFO)	= do_getepinfo,		/* getepinfo(2) */
 	CALL(PM_GETPROCNR)	= do_getprocnr,		/* getprocnr(2) */
 	CALL(PM_GETSYSINFO)	= do_getsysinfo		/* getsysinfo(2) */
+#ifndef MINIXORIGINAL
 	CALL(PM_SENDMSG)	= do_MQsend,
  	CALL(PM_RECVMSG)	= do_MQrecv,	
  	CALL(PM_COUNTMSG)	= do_MQcount,	
  	CALL(PM_INSPECTMSG)	= do_MQinspect
+#endif
+	
 };
