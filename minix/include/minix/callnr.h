@@ -58,11 +58,16 @@
 #define PM_GETEPINFO		(PM_BASE + 45)
 #define PM_GETPROCNR		(PM_BASE + 46)
 #define PM_GETSYSINFO		(PM_BASE + 47)
+#ifndef MINIXORIGINAL
 #define PM_SENDMSG		(PM_BASE + 48)
 #define PM_RECVMSG		(PM_BASE + 49)
 #define PM_COUNTMSG		(PM_BASE + 50)
 #define PM_INSPECTMSG		(PM_BASE + 51)
+#endif
+#define NR_PM_CALLS		48	/* highest number from base plus one */
+#ifndef MINIXORIGINAL
 #define NR_PM_CALLS		52	/* highest number from base plus one */
+#endif
 
 /*===========================================================================*
  *				Calls to VFS				     *
